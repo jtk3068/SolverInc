@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RedditService} from "../../../services/reddit.service";
+import {Input} from "@angular/compiler/src/core";
 
 
 @Component({
@@ -8,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RedditListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  // @Input() subreddit:string
+  constructor(
+    private redditService: RedditService
+  ) {
 
   }
 
+  ngOnInit() {
+    console.log(`hello`)
+    this.redditService.getRedditPosts("pics").subscribe(posts => {
+      console.log(`this is the data ${JSON.stringify(posts.data.children[2].data.title)}`)
+      // console.log(`this is the data ${JSON.stringify(posts)}`)
+
+    })
+  }
+
 }
+

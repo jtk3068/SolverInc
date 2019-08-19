@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { RedditListComponent } from './components/main/reddit-list/reddit-list.component';
 import { TableModule } from 'primeng/table';
+import {RedditService} from "./services/reddit.service";
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -17,9 +20,12 @@ import { TableModule } from 'primeng/table';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RedditService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

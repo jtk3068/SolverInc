@@ -1,18 +1,14 @@
-<p-table >
+<p-table [value]="posts" >
   <ng-template pTemplate="header">
     <tr>
-      <th>Vin</th>
-      <th>Year</th>
-      <th>Brand</th>
-      <th>Color</th>
+      <th>Thumbnail</th>
+      <th>Title</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body">
+  <ng-template pTemplate="body" let-post>
     <tr>
-      <td>Hello</td>
-      <td>Hello</td>
-      <td>Hello</td>
-      <td>Hello</td>
+      <td><img src="{{post.thumbnail}}" alt=""></td>
+      <td>{{post.title}}</td>
     </tr>
   </ng-template>
 </p-table>

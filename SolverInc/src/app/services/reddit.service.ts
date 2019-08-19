@@ -32,7 +32,22 @@ export class RedditService {
   }
 
   public getRedditPosts(subreddit: string): Observable<any> {
-    return this.http.get(`https://www.reddit.com/r/${subreddit}/.json`).pipe(map(res => res))}
+    return this.http.get(`https://www.reddit.com/r/${subreddit}/.json`).pipe(map(res => {
+      console.log(`this is res in service ${res}`)
+      // let body: any;
+      // body = res.data.children;
+      let posts:RedditPost[] = [];
+      let children = res.data.children;
+      for(var i=0 ; i < children.length; i++) {
+        let post:RedditPost = new RedditPost();
+        post.thumbnail = children[i].data.thumbnail ;
+        post.title = children[i].data.title;
+        post.commentPath = children[i].data.permalink;
+        posts.push(post);
+      }
+
+      return posts;
+    }))}
 
 
   initializeObservables(): void {

@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './components/src/app/components/main/main.component';
+import { MainComponent } from './components/main/main.component';
 import { RedditListComponent } from './components/main/reddit-list/reddit-list.component';
+import { TableModule } from 'primeng/table';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { RedditListComponent } from './components/main/reddit-list/reddit-list.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-reddit-list',
   templateUrl: './reddit-list.component.html',
@@ -10,6 +11,7 @@ export class RedditListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

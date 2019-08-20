@@ -1,25 +1,42 @@
-<p-table [value]="comments" [paginator]="true" [rows]="10" >
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Comment</th>
+<!--<p-table [value]="comments" [paginator]="true" [rows]="10" >-->
+  <!--<ng-template pTemplate="header">-->
+    <!--<tr>-->
+      <!--<th>Comment</th>-->
 
+    <!--</tr>-->
+  <!--</ng-template>-->
+  <!--<ng-template pTemplate="body" let-comment>-->
+    <!--<tr>-->
+      <!--<td>{{comment.body}}</td>-->
+    <!--</tr>-->
+  <!--</ng-template>-->
+
+  <!--<ng-template pTemplate="paginatoreft" let-state>-->
+    <!--&lt;!&ndash;{{state.first}}&ndash;&gt;-->
+    <!--<button type="button"></button>-->
+  <!--</ng-template>-->
+  <!--<ng-template pTemplate="paginatorright">-->
+    <!--<button type="button" ></button>-->
+  <!--</ng-template>-->
+
+<!--</p-table>-->
+<!--&lt;!&ndash;<div ngFor="let com of comments">&ndash;&gt;-->
+  <!--&lt;!&ndash;<p>{{com.body}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<p-table [columns]="cols" [value]="comments" [paginator]="true" [rows]="10">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-comment>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
     <tr>
-      <td>{{comment.body}}</td>
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
     </tr>
   </ng-template>
-
-  <ng-template pTemplate="paginatoreft" let-state>
-    <!--{{state.first}}-->
-    <button type="button"></button>
-  </ng-template>
-  <ng-template pTemplate="paginatorright">
-    <button type="button" ></button>
-  </ng-template>
-
 </p-table>
-<!--<div ngFor="let com of comments">-->
-  <!--<p>{{com.body}}</p>-->
-<!--</div>-->

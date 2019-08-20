@@ -54,5 +54,10 @@ export class RedditListComponent implements OnInit, OnChanges {
     this.first = event.first;
   }
 
+  goToComments(commentPath:string) {
+    console.log('hi');
+    this.redditService.comments = commentPath;
+  }
+
 }
 

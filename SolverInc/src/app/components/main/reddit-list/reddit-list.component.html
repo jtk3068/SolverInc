@@ -11,7 +11,7 @@
     <tr>
       <td><img src="{{post.thumbnail}}" alt=""></td>
       <td>{{post.title}}</td>
-      <td><a [routerLink]="['/comments']" [queryParams]="{path: post.commentPath}" >comments</a></td>
+      <td><a [routerLink]="['/comments']" (click)="goToComments(post.commentPath)" >comments</a></td>
     </tr>
   </ng-template>
 

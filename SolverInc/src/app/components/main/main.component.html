@@ -1,4 +1,5 @@
-<p>main works!</p>
-<app-reddit-list>
-
-</app-reddit-list>
+<p>Enter Subreddit</p>
+<form >
+  <input [(ngModel)] = "subreddit" name="subreddit">
+</form>
+<button type="submit" [routerLink]="['/reddit-list']" (click)="onSubmit()" >Submit</button>

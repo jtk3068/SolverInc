@@ -13,6 +13,10 @@ export class RedditListComponent implements OnInit, OnChanges {
 
   // @Input() subreddit:string
   posts:RedditPost[]=[];
+  cols: any[];
+  first: number = 0;
+  subreddit: string;
+
   constructor(
     private redditService: RedditService
   ) {
@@ -21,16 +25,33 @@ export class RedditListComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log(`hello`)
-    this.redditService.getRedditPosts("pics").subscribe(posts => {
+    this.redditService.subreddit$.subscribe(sub => {
+      this.subreddit = sub;
+    })
+    this.redditService.getRedditPosts(this.subreddit).subscribe(posts => {
       // console.log(`this is the data ${JSON.stringify(posts.data.children[2].data.title)}`)
       // console.log(`this is the data ${JSON.stringify(posts)}`)
       // console.log(`this is posts in the component ${JSON.stringify(posts[3])}`)
       this.posts = posts;
     })
+
+    this.cols = [
+      { field: 'thumbnail', header: 'Thumbnail' },
+      { field: 'title', header: 'Title' },
+      { field: 'commentPath', header: 'CommentPath' },
+    ];
+
   }
 
   ngOnChanges() {
     console.log(`this is the posts on changes ${this.posts}`)
+  }
+
+  reset() {
+    this.first = 0;
+  }
+  paginate(event) {
+    this.first = event.first;
   }
 
 }

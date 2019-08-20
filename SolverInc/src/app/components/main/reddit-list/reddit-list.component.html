@@ -1,14 +1,26 @@
-<p-table [value]="posts" >
+<p-table [value]="posts" [paginator]="true" [rows]="10" >
   <ng-template pTemplate="header">
     <tr>
       <th>Thumbnail</th>
       <th>Title</th>
+      <th>Comments</th>
+
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-post>
     <tr>
       <td><img src="{{post.thumbnail}}" alt=""></td>
       <td>{{post.title}}</td>
+      <td><a [routerLink]="['/comments']" [queryParams]="{path: post.commentPath}" >comments</a></td>
     </tr>
   </ng-template>
+
+  <ng-template pTemplate="paginatoreft" let-state>
+    <!--{{state.first}}-->
+    <button type="button"></button>
+  </ng-template>
+  <ng-template pTemplate="paginatorright">
+    <button type="button" ></button>
+  </ng-template>
+
 </p-table>

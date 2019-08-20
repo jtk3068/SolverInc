@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RedditService} from "../../services/reddit.service";
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  subreddit: string
+  constructor(private redditService: RedditService) { }
 
   ngOnInit() {
+
   }
 
+  onSubmit()
+  {
+    this.redditService.subreddit = this.subreddit;
+  }
 }

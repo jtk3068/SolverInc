@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eedfa7cd-14c9-45a7-b898-bf4c99f2f699" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/components/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/components/comments/comments.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/components/main/reddit-list/reddit-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/components/main/reddit-list/reddit-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/models/comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/models/comment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolverInc/src/app/services/reddit.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/SolverInc/src/app/services/reddit.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="eedfa7cd-14c9-45a7-b898-bf4c99f2f699" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -352,16 +339,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566065267549</updated>
-      <workItem from="1566065268986" duration="33397000" />
+      <workItem from="1566065268986" duration="33636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33397000" />
+    <option name="totallyTimeSpent" value="33636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.29739252" />
@@ -372,7 +358,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.4025641" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.4025641" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />

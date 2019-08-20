@@ -7,7 +7,7 @@ import {RedditService} from "../../services/reddit.service";
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent implements OnInit, OnChanges {
+export class CommentsComponent implements OnInit {
 
   comments: Comment[] = [];
   cols: any[];
@@ -21,11 +21,11 @@ export class CommentsComponent implements OnInit, OnChanges {
 
     this.redditService.comments$.subscribe(com => {
       this.commentPath = com;
-      console.log("this is com", com)
+      // console.log("this is com", com)
     })
 
     this.redditService.getRedditComments().subscribe(comment => {
-      console.log(`this is comments in the component oninit ${comment}`)
+      // console.log(`this is comments in the component oninit ${comment}`)
       this.comments = comment
     })
 
@@ -34,8 +34,8 @@ export class CommentsComponent implements OnInit, OnChanges {
     ];
   }
 
-  ngOnChanges() {
-    console.log("this is comments", this.comments)
-  }
+  // ngOnChanges() {
+  //   console.log("this is comments", this.comments)
+  // }
 
 }

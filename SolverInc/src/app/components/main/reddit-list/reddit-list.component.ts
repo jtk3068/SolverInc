@@ -9,7 +9,7 @@ import {RedditPost} from "../../../models/redditPost";
   templateUrl: './reddit-list.component.html',
   styleUrls: ['./reddit-list.component.css']
 })
-export class RedditListComponent implements OnInit, OnChanges {
+export class RedditListComponent implements OnInit {
 
   // @Input() subreddit:string
   posts:RedditPost[]=[];
@@ -24,7 +24,6 @@ export class RedditListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    console.log(`hello`)
     this.redditService.subreddit$.subscribe(sub => {
       this.subreddit = sub;
     })
@@ -43,9 +42,9 @@ export class RedditListComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnChanges() {
-    console.log(`this is the posts on changes ${this.posts}`)
-  }
+  // ngOnChanges() {
+  //   console.log(`this is the posts on changes ${this.posts}`)
+  // }
 
   reset() {
     this.first = 0;
@@ -55,7 +54,6 @@ export class RedditListComponent implements OnInit, OnChanges {
   }
 
   goToComments(commentPath:string) {
-    console.log('hi');
     this.redditService.comments = commentPath;
   }
 

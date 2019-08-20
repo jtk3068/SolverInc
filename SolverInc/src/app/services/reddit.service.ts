@@ -6,6 +6,7 @@ import {HttpClient} from "@angular/common/http";
 
 import { map } from 'rxjs/operators';
 import {RedditPost} from "../models/redditPost";
+import {Comment} from "../models/comment";
 
 
 @Injectable()
@@ -14,15 +15,27 @@ export class RedditService {
   /**
    * Current Post
    */
-  currentPost$: Observable<string>;
-  private _currentPostSource: BehaviorSubject<string>;
-  private _currentPost: string;
-  get currentPost(): string {
-    return this._currentPost;
+  subreddit$: Observable<string>;
+  comments$: Observable<string>;
+
+  private _commentsSource: BehaviorSubject<string>;
+  private _comments: string;
+  get comments(): string {
+    return this._comments;
   }
-  set currentPost(id: string) {
-    this._currentPost = id;
-    this._currentPostSource.next(this._currentPost);
+  set comments(id: string) {
+    this._comments = id;
+    this._commentsSource.next(this._comments);
+  }
+
+  private _subredditSource: BehaviorSubject<string>;
+  private _subreddit: string;
+  get subreddit(): string {
+    return this._subreddit;
+  }
+  set subreddit(id: string) {
+    this._subreddit = id;
+    this._subredditSource.next(this._subreddit);
   }
 
 
@@ -33,7 +46,7 @@ export class RedditService {
 
   public getRedditPosts(subreddit: string): Observable<any> {
     return this.http.get(`https://www.reddit.com/r/${subreddit}/.json`).pipe(map(res => {
-      console.log(`this is res in service ${res}`)
+      // console.log(`this is res in service ${res}`)
       // let body: any;
       // body = res.data.children;
       let posts:RedditPost[] = [];
@@ -47,11 +60,30 @@ export class RedditService {
       }
 
       return posts;
-    }))}
+    }))
+  }
+
+  public getRedditComments(): Observable<any> {
+    return this.http.get(`https://www.reddit.com${this.comments}/.json`).pipe(map(res => {
+      let comments:Comment[] = [];
+      let children = res[1].data.children;
+      // console.log(`this is children for comments ${JSON.stringify(children[0].data.body)}`)
+      for (var i = 0; i < children.length; i++) {
+        let comment:Comment = new Comment();
+        comment.body = children[i].data.body;
+        comments.push(comment)
+      }
+      // console.log(`this is comment 1 ${comments[1].body}`)
+      return comments
+    }))
+  }
 
 
   initializeObservables(): void {
-    this._currentPostSource = new BehaviorSubject<string>(null);
-    this.currentPost$ = this._currentPostSource.asObservable();
+    this._subredditSource = new BehaviorSubject<string>(null);
+    this.subreddit$ = this._subredditSource.asObservable();
+
+    this._commentsSource = new BehaviorSubject<string>(null);
+    this.comments$ = this._subredditSource.asObservable();
   }
 }
